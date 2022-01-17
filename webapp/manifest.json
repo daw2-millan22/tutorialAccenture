@@ -88,13 +88,20 @@
       "routes": [
         {
           "name": "RouteView1",
-          "pattern": "RouteView1",
+          "pattern": "",
           "target": [
             "TargetView1"
           ]
         }
       ],
       "targets": {
+        "TargetApp": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "App",
+          "viewName": "App"
+        },
         "TargetView1": {
           "viewType": "XML",
           "transition": "slide",
@@ -105,10 +112,10 @@
       }
     },
     "rootView": {
-      "viewName": "tutorial1.view.View1",
+      "viewName": "tutorial1.view.App",
       "type": "XML",
       "async": true,
-      "id": "View1"
+      "id": "App"
     }
   }
 }
