@@ -1,21 +1,19 @@
 <mvc:View
-    controllerName="tutorial1.controller.App" 
+    controllerName="tutorial1.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
     xmlns="sap.m"
     xmlns:core="sap.ui.core"
->
-  
-    <Page id="page" title="{i18n>title}">
-        <content>
-             <Button text="Hello World!" press="onSayHello"></Button>
-             <ComboBox items="{CitiesModel>/}" selectedKey="{ToolModel>/selectedCity}">
-                <core:Item key="{CitiesModel>name}" text="{CitiesModel>name}"></core:Item>
-            </ComboBox>
-            <ComboBox items="{CitiesModel>/}" selectedKey="{ToolModel>/selectedCity}">
-               <core:Item key="{CitiesModel>population}" text="{CitiesModel>population}"></core:Item>
-             </ComboBox>
-         </content>
-    </Page>
 
+>  
+
+        <Page id="page" title="{i18n>title}">
+            <content>
+                <Button id="_IDGenButton2" text="Hello World!" press="onSayHello"></Button>
+                <ComboBox id="_IDGenComboBox1" items="{CitiesModel>/}" selectedKey="{ToolModel>/selectedCity}">
+                    <core:Item id="_IDGenItem1" key="{CitiesModel>name}" text="{CitiesModel>name}" />
+                </ComboBox>
+                <Button id="_IDGenButton1" text="ir View2" press="onNavigateToView2"></Button>
+            </content>
+        </Page>
 </mvc:View>
