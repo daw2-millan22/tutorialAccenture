@@ -9,7 +9,7 @@
   
     <Page id="page" title="{i18n>title}">
         <content>
-            <table:Table id="_IDGenTable1" rows="{CitiesModel>/}">
+            <table:Table id="_IDGenTable1" rows="{CitiesModel>/}" items="{CitiesModels>/}">
                 <table:columns>
                     <table:Column
                     id="name"
@@ -24,11 +24,20 @@
                     sortProperty="population" filterProperty="population">
                     <Label id="_IDGenLabel1" text="population"/>
                     <table:template>
-                        <Text id="_IDGenText1" text="{CitiesModel>population}" wrapping="false"></Text>
+                        <Text id="_IDGenText1" text="{path: 'CitiesModel>population', formatter: '.Formatter.formatPopulation'}" wrapping="false"></Text>
                     </table:template>
                     </table:Column>
                 </table:columns>
+               
             </table:Table>
+             <!--<items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{CitiesModel>name}"/>
+                            <Text text="{path: 'CitiesModel>population', formatter:'.formatPopulation'}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>-->
          </content>
     </Page>
 

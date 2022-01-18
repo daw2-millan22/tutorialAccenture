@@ -1,11 +1,16 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "sap/ui/model/json/JSONModel"
+    "sap/ui/model/json/JSONModel",
+    "../utils/Validator",
+    "sap/m/MessageToast",
+    "../utils/Common"
+
+
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, JSONModel) {
+    function (Controller, JSONModel, Validator, Common, MessageToast) {
         "use strict";
 
         return Controller.extend("tutorial.controller.View1", {
@@ -23,11 +28,13 @@ sap.ui.define([
     
                 }
                 */
-                if( !this._dialogSayHello ) {
-                    this._dialogSayHello = sap.ui.xmlfragment("idSayHelloDialog", "tutorial1.fragment.sayHelloDialog", this);
-                    this.getView().addDependent(this._dialogSayHello);
-                }
-                this._dialogSayHello.open();
+               if(!Validator.isNotEmpty(this.getView().byId("city-combobox").getSelectedKey())){
+                   sap.m.MessageToast.show("Selected a City", {
+                       duration: 3000,
+                   });
+                   return;
+               }
+                Common.openDialogFromFragment(this, "isSayHelloDialog", "tutorial1.fragment.sayHelloDialog");
             },
             //Si clickamos a "cerrar" la ventana de dialogo cerrará
             onClose: function () {
@@ -37,8 +44,7 @@ sap.ui.define([
             },
 
             onNavigateToView2: function(){
-                var router=this.getOwnerComponent().getRouter();
-                router.navTo("RouteView2");
+                Common.onNavigateTo(this, "RouteView2");
             }
         });
 

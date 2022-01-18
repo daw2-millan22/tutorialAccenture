@@ -10,7 +10,7 @@
         <Page id="page" title="{i18n>title}">
             <content>
                 <Button id="_IDGenButton2" text="Hello World!" press="onSayHello"></Button>
-                <ComboBox id="_IDGenComboBox1" items="{CitiesModel>/}" selectedKey="{ToolModel>/selectedCity}">
+                <ComboBox id="city-combobox" items="{CitiesModel>/}" selectedKey="{ToolModel>/selectedCity}">
                     <core:Item id="_IDGenItem1" key="{CitiesModel>name}" text="{CitiesModel>name}" />
                 </ComboBox>
                 <Button id="_IDGenButton1" text="ir View2" press="onNavigateToView2"></Button>
