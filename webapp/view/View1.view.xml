@@ -4,16 +4,17 @@
     displayBlock="true"
     xmlns="sap.m"
     xmlns:core="sap.ui.core"
-
->  
-
-        <Page id="page" title="{i18n>title}">
-            <content>
-                <Button id="_IDGenButton2" text="Hello World!" press="onSayHello"></Button>
-                <ComboBox id="city-combobox" items="{CitiesModel>/}" selectedKey="{ToolModel>/selectedCity}">
-                    <core:Item id="_IDGenItem1" key="{CitiesModel>name}" text="{CitiesModel>name}" />
-                </ComboBox>
-                <Button id="_IDGenButton1" text="ir View2" press="onNavigateToView2"></Button>
-            </content>
-        </Page>
+    xmlns:table="sap.ui.table"
+>
+    
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Button text="{i18n>HelloWorld}" press="onSayHello"></Button>
+            <ComboBox id="city-combobox" items="{CitiesModel>/}"  selectedKey="{ToolModel>/cityName}" >
+                <core:Item text="{CitiesModel>name}" key="{CitiesModel>name}"/>
+            </ComboBox>
+            <Button text="{i18n>NavigateToView} 2" press="onNavigateToView2"></Button>
+            <Button text="{i18n>NavigateToView} 3" press="onNavigateToView3"></Button>
+        </content>
+    </Page>
 </mvc:View>

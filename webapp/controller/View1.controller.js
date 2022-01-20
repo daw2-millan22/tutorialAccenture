@@ -2,50 +2,50 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
     "../utils/Validator",
-    "sap/m/MessageToast",
     "../utils/Common"
-
-
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, JSONModel, Validator, Common, MessageToast) {
+    function (Controller, JSONModel, Validator, Common) {
         "use strict";
 
-        return Controller.extend("tutorial.controller.View1", {
+        return Controller.extend("tutorial1.controller.View1", {
             onInit: function () {
-                this.getOwnerComponent().setModel(new JSONModel({name: "Clase Fiori"}), "{ToolModel/}");
-                this.getView().setModel(new JSONModel("../model/cities.json"), "CitiesModel");
+                const oCitiesModel = new JSONModel();
+                oCitiesModel.loadData("../model/cities.json");
+                this.getView().setModel(oCitiesModel, "CitiesModel");
             },
 
-            onSayHello: function(oEvent){
-                /*
-                //mensaje flotante "Hello world" que aparece durante 3s cuando pulsamos el boton.
-                    MessageToast.show("Hello World!", {
-                        duration: 3000,
+            onSayHello: function (oEvent) {
+                
+                
+                if (!Validator.isNotEmpty(this.getView().byId("city-combobox").getSelectedKey())) {
+                    sap.m.MessageToast.show("Select a City", {
+                        duration: 3000, 
+                    
                     });
-    
+                    
+                    
+                    return;
                 }
-                */
-               if(!Validator.isNotEmpty(this.getView().byId("city-combobox").getSelectedKey())){
-                   sap.m.MessageToast.show("Selected a City", {
-                       duration: 3000,
-                   });
-                   return;
-               }
-                Common.openDialogFromFragment(this, "isSayHelloDialog", "tutorial1.fragment.sayHelloDialog");
+                Common.openDialogFromFragment(this, "idSayHelloDialog", "tutorial1.fragment.sayHelloDialog");
+
+                
+                
             },
-            //Si clickamos a "cerrar" la ventana de dialogo cerrará
+            
             onClose: function () {
                 if ( this._dialogSayHello ) {
                     this._dialogSayHello.close()
                 }
             },
-
-            onNavigateToView2: function(){
-                Common.onNavigateTo(this, "RouteView2");
+            
+            onNavigateToView2: function () {
+                Common.navigateTo(this, "RouteView2");
+            },
+            onNavigateToView3: function () {
+                Common.navigateTo(this, "RouteView3");
             }
         });
-
     });

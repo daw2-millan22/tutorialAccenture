@@ -1,0 +1,38 @@
+<mvc:View
+    controllerName="tutorial1.controller.View3" 
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    
+>
+  
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Table id="_IDGenTable1" items="{CitiesModel>/}">
+                <columns>
+                    <Column id="_IDGenColumn1" >
+                        <header>
+                            <Text id="_IDGenText1" text="{i18n>CityName}"></Text>
+                        </header>
+                        <footer />
+                    </Column>
+                    <Column id="_IDGenColumn2" >
+                        <header>
+                            <Text id="_IDGenText2" text="{i18n>Population}"></Text>
+                        </header>
+                        <footer />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="_IDGenColumnListItem1" type="Active" press="onSayHello">
+                        <cells>
+                            <Text id="_IDGenText3" text="{CitiesModel>name}" />
+                            <Text id="_IDGenText4" text="{path: 'CitiesModel>population', formatter: '.Formatter.formatPopulation'}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+         </content>
+    </Page>
+</mvc:View>
