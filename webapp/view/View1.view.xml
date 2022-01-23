@@ -9,12 +9,31 @@
     
     <Page id="page" title="{i18n>title}">
         <content>
-            <Button text="{i18n>HelloWorld}" press="onSayHello"></Button>
-            <ComboBox id="city-combobox" items="{CitiesModel>/}"  selectedKey="{ToolModel>/cityName}" >
-                <core:Item text="{CitiesModel>name}" key="{CitiesModel>name}"/>
-            </ComboBox>
-            <Button text="{i18n>NavigateToView} 2" press="onNavigateToView2"></Button>
-            <Button text="{i18n>NavigateToView} 3" press="onNavigateToView3"></Button>
+            <IconTabBar expandable="false" class="myCustomIconTab">
+                    <items>
+                        <IconTabFilter text="Info" key="info">
+                            <mvc:XMLView viewName="tutorial1.view.View2" class="myCustomView" />
+                        </IconTabFilter>
+                        <IconTabFilter text="{i18n>IconTabAutorization}" key="attachments">
+                            <mvc:XMLView viewName="tutorial1.view.Autorization" class="myCustomView" />
+                        </IconTabFilter>
+                        <IconTabFilter text="Notes" key="notes">
+                            <Text text="Notes go here ..." />
+                        </IconTabFilter>
+                        <IconTabFilter text="People" key="people">
+                            <Text text="People content goes here ..." />
+                        </IconTabFilter>
+                    </items>
+                </IconTabBar>            
+            <HBox class="myHeaderBarGeneric">
+                <Button class="myPrimaryBtn" text="{i18n>HelloWorld}" press="onSayHello"></Button>
+                <ComboBox class="myComboBoxStyle" id="city-combobox" items="{CitiesModel>/}"  selectedKey="{ToolModel>/cityName}" >
+                    <core:Item text="{CitiesModel>name}" key="{CitiesModel>name}"/>
+                </ComboBox>
+                <Button text="{i18n>NavigateToView} 2" press="onNavigateToView2"></Button>
+                <Button text="{i18n>NavigateToView} 3" press="onNavigateToView3"></Button>
+            </HBox>
+            
         </content>
     </Page>
 </mvc:View>

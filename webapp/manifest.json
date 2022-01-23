@@ -106,6 +106,13 @@
           "target": [
             "TargetView3"
           ]
+        },
+        {
+          "name": "RouteAutorization",
+          "pattern": "Autorization",
+          "target": [
+            "Autorization"
+          ]
         }
       ],
       "targets": {
@@ -130,6 +137,13 @@
           "clearControlAggregation": false,
           "viewId": "View3",
           "viewName": "View3"
+        },
+        "Autorization": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Autorization",
+          "viewName": "Autorization"
         }
       }
     },
