@@ -9,17 +9,17 @@
   
     <Page id="page" title="{i18n>title}">
         <content>
-            <Table id="_IDGenTable1" items="{CitiesModel>/}">
+            <Table id="_IDGenTable1" items="{/Products}">
                 <columns>
                     <Column id="_IDGenColumn1" >
                         <header>
-                            <Text id="_IDGenText1" text="{i18n>CityName}"></Text>
+                            <Text id="_IDGenText1" text="PRODUCTO"></Text>
                         </header>
                         <footer />
                     </Column>
                     <Column id="_IDGenColumn2" >
                         <header>
-                            <Text id="_IDGenText2" text="{i18n>Population}"></Text>
+                            <Text id="_IDGenText2" text="PRECIO"></Text>
                         </header>
                         <footer />
                     </Column>
@@ -27,8 +27,8 @@
                 <items>
                     <ColumnListItem id="_IDGenColumnListItem1" type="Active" press="onSayHello">
                         <cells>
-                            <Text id="_IDGenText3" text="{CitiesModel>name}" />
-                            <Text id="_IDGenText4" text="{path: 'CitiesModel>population', formatter: '.Formatter.formatPopulation'}" />
+                            <Text id="_IDGenText3" text="{ProductName}" />
+                            <Text id="_IDGenText4" text="{UnitPrice}" />
                         </cells>
                     </ColumnListItem>
                 </items>
