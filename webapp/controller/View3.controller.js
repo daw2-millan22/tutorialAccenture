@@ -38,7 +38,12 @@ sap.ui.define([
 
                 var oModelNorthWind = this.getOwnerComponent().getModel();
 
+                
+
                 oModelNorthWind.read(oEvent.getSource().getBindingContext().sPath, {
+                    urlParameters: {
+                        "$expand": "Category, Order_Details, Supplier"
+                    },
                     success: function (oData) {
                         sap.ui.getCore().setModel(new JSONModel(oData), "DetailModel");
                         Common.navigateTo(this, "RouteView4");

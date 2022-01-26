@@ -38,7 +38,12 @@ sap.ui.define([
                 Common.openDialogFromFragment(this, "idSayHelloDialog", "tutorial1.fragment.sayHelloDialog");
                 
                 return;          
+            },
+            onShowImage: function (oVent) {
+           
+                Common.openDialogFromFragment(this, "idSayHelloDialog", "tutorial1.fragment.showImage");
             }
+        
             
             
         });
