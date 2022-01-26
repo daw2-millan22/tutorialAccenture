@@ -1,0 +1,47 @@
+[
+    {
+        "AutorizacionesTipos": "Ricardo Millán Fernández",
+        "Tipo": "Vacaniones",
+        "FechaHora": "23/5/2022 | 5/6/2022",
+        "Aprobado": "Aceptado",
+        "AprobadoPor": "Pedro Sanchez",
+        "Estado": "Pediente"
+
+    },
+    {
+        "AutorizacionesTipos": "Alejandro Ramudo Cruz",
+        "Tipo": "Vacaniones",
+        "FechaHora": "28/5/2022 | 11/6/2022",
+        "Aprobado": "Aceptado",
+        "AprobadoPor": "Pablo Iglesias",
+        "Estado": "Pediente"
+
+    },
+    {
+        "Autorizaciones de tiepos": "Georgina Guitart de Abajo",
+        "Tipo": "Vacaniones",
+        "FechaHora": "23/5/2022 | 5/6/2022",
+        "Aprobado": "Aceptado",
+        "AprobadoPor": "Pedro Sanchez",
+        "Estado": "Pediente"
+
+    }
+    ,{
+        "Autorizaciones de tiepos": "Victor Gomez PÑaredes",
+        "Tipo": "Excedencia",
+        "FechaHora": "23/5/2022 | 5/6/2022",
+        "Aprobado": "Aceptado",
+        "AprobadoPor": "Pedro Sanchez",
+        "Estado": "Pediente"
+
+    },
+    {
+        "Autorizaciones de tiepos": "Mariola Ortin Garcia",
+        "Tipo": "Vacaniones",
+        "FechaHora": "23/5/2022 | 5/6/2022",
+        "Aprobado": "Aceptado",
+        "AprobadoPor": "Pedro Sanchez",
+        "Estado": "Pediente"
+
+    }
+]

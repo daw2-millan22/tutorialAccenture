@@ -13,6 +13,15 @@ sap.ui.define([
             onInit: function () {
                 this.getOwnerComponent().setModel(new JSONModel({name: "Clase Fiori"}), "ToolModel");
                 this.getView().setModel(new JSONModel("../model/cities.json"), "CitiesModel");
+                console.log(_.defaults({'a': 3, 'b': 2}));
+
+
+                var oModelNorthWind = this.getOwnerComponent().getModel();
+                oModelNorthWind.read("/Products", {
+                    success: function(oData) {
+                        console.log(oData);
+                    }
+                })
             }
             
         });

@@ -9,29 +9,29 @@
     
     <Page id="page" title="{i18n>title}">
         <content>
-            <IconTabBar expandable="false" class="myCustomIconTab">
+                <IconTabBar id="_IDGenIconTabBar1" expandable="false" class="myCustomIconTab">
                     <items>
-                        <IconTabFilter text="Info" key="info">
-                            <mvc:XMLView viewName="tutorial1.view.View2" class="myCustomView" />
+                        <IconTabFilter id="_IDGenIconTabFilter1" text="Info" key="info">
+                            <mvc:XMLView id="_IDGenXMLView1" viewName="tutorial1.view.View2" class="myCustomView" />
                         </IconTabFilter>
-                        <IconTabFilter text="{i18n>IconTabAutorization}" key="attachments">
-                            <mvc:XMLView viewName="tutorial1.view.Autorization" class="myCustomView" />
+                        <IconTabFilter id="_IDGenIconTabFilter2" text="{i18n>IconTabAutorization}" key="attachments">
+                            <mvc:XMLView id="_IDGenXMLView2" viewName="tutorial1.view.Autorization" class="myCustomView" />
                         </IconTabFilter>
-                        <IconTabFilter text="Notes" key="notes">
-                            <Text text="Notes go here ..." />
+                        <IconTabFilter id="_IDGenIconTabFilter3" text="Notes" key="notes">
+                            <Text id="_IDGenText1" text="Notes go here ..." />
                         </IconTabFilter>
-                        <IconTabFilter text="People" key="people">
-                            <Text text="People content goes here ..." />
+                        <IconTabFilter id="_IDGenIconTabFilter4" text="People" key="people">
+                            <Text id="_IDGenText2" text="People content goes here ..." />
                         </IconTabFilter>
                     </items>
                 </IconTabBar>            
-            <HBox class="myHeaderBarGeneric">
-                <Button class="myPrimaryBtn" text="{i18n>HelloWorld}" press="onSayHello"></Button>
-                <ComboBox class="myComboBoxStyle" id="city-combobox" items="{CitiesModel>/}"  selectedKey="{ToolModel>/cityName}" >
-                    <core:Item text="{CitiesModel>name}" key="{CitiesModel>name}"/>
+            <HBox id="_IDGenHBox1" class="myHeaderBarGeneric">
+                <Button id="_IDGenButton1" class="myPrimaryBtn" text="{i18n>HelloWorld}" press="onSayHello"></Button>
+                <ComboBox class="myComboBoxStyle" id="products-combobox" items="{/Products}"  selectedKey="{ToolModel>/cityName}" >
+                    <core:Item id="_IDGenItem1" text="{ProductName}" key="{ProductName}"/>
                 </ComboBox>
-                <Button text="{i18n>NavigateToView} 2" press="onNavigateToView2"></Button>
-                <Button text="{i18n>NavigateToView} 3" press="onNavigateToView3"></Button>
+                <Button id="_IDGenButton2" text="{i18n>NavigateToView} 2" press="onNavigateToView2"></Button>
+                <Button id="_IDGenButton3" text="{i18n>NavigateToView} 3" press="onNavigateToView3"></Button>
             </HBox>
             
         </content>

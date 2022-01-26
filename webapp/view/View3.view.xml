@@ -9,7 +9,7 @@
   
     <Page id="page" title="{i18n>title}">
         <content>
-            <Table id="_IDGenTable1" items="{/Products}">
+            <Table id="_IDGenTable1" items="{/Products}" >
                 <columns>
                     <Column id="_IDGenColumn1" >
                         <header>
@@ -23,12 +23,33 @@
                         </header>
                         <footer />
                     </Column>
+                    <Column id="_IDGenColumn3" >
+                        <header>
+                            <Text id="_IDGenText3" text="CategoryID"></Text>
+                        </header>
+                        <footer />
+                    </Column>
+                    <Column id="_IDGenColumn4" >
+                        <header>
+                            <Text id="_IDGenText4" text="Discontinued"></Text>
+                        </header>
+                        <footer />
+                    </Column>
+                    <Column id="_IDGenColumn5" >
+                        <header>
+                            <Text id="_IDGenText5" text="PProductID"></Text>
+                        </header>
+                        <footer />
+                    </Column>
                 </columns>
                 <items>
-                    <ColumnListItem id="_IDGenColumnListItem1" type="Active" press="onSayHello">
+                    <ColumnListItem id="_IDGenColumnListItem1" type="Active" press="onPress">
                         <cells>
-                            <Text id="_IDGenText3" text="{ProductName}" />
-                            <Text id="_IDGenText4" text="{UnitPrice}" />
+                            <Text id="_IDGenText6" text="{ProductName}" />
+                            <Text id="_IDGenText7" text="{UnitPrice}" />
+                            <Text id="_IDGenText8" text="{CategoryID}" />
+                            <Text id="_IDGenText9" text="{Discontinued}" />
+                            <Text id="_IDGenText10" text="{ProductID}" />
                         </cells>
                     </ColumnListItem>
                 </items>

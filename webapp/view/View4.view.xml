@@ -1,0 +1,30 @@
+<mvc:View
+    controllerName="tutorial1.controller.View4"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+
+>  
+
+        <Page id="page" title="{i18n>title}">
+            <content>
+            
+                <form:SimpleForm id="_IDGenSimpleForm1" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" labelSpanL="12" labelSpanM="12" emptySpanL="0" emptySpanM="0" columnsL="1" columnsM="1">
+					<form:content>
+					    <Label id="_IDGenLabel1" text="{i18n>Name}" design="Bold"/>
+						<Text id="_IDGenText1" text="{DetailModel>/ProductName}"/>
+						<Label id="_IDGenLabel2" text="{i18n>Price}" design="Bold"/>
+						<Text id="_IDGenText2" text="{DetailModel>/UnitPrice}"/>
+						<Label id="_IDGenLabel3" text="{i18n>Category}" design="Bold"/>
+						<Text id="_IDGenText3" text="{DetailModel>/CategoryID}"/>
+                        <Label id="_IDGenLabel4" text="Discontinued" design="Bold"/>
+						<Text id="_IDGenText4" text="{DetailModel>/Discontinued}"/>
+                        <Label id="_IDGenLabel5" text="{i18n>ProductID}" design="Bold"/>
+						<Text id="_IDGenText5" text="{DetailModel>/ProductID}"/>
+					</form:content>
+				</form:SimpleForm>
+            </content>
+        </Page>
+</mvc:View>

@@ -1,10 +1,13 @@
 <mvc:View
     	controllerName="tutorial1.controller.Autorization"
 		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:core="sap.ui.core"
+		xmlns:layout="sap.ui.layout"
 		xmlns="sap.m"
 		xmlns:f="sap.f"
-		xmlns:layout="sap.ui.layout"
-		height="100%">
+		xmlns:fb="sap.ui.comp.filterbar"
+		xmlns:vm="sap.ui.comp.variants"
+		height="93%">
     <App>
         <f:DynamicPage id="dynamicPageId" headerExpanded="true" showFooter="true">
             <!-- DynamicPage Title -->
@@ -18,17 +21,77 @@
             <!-- DynamicPage Header -->
             <f:header>
                 <f:DynamicPageHeader pinnable="true">
-                    <layout:HorizontalLayout allowWrapping="true">
-                        <layout:VerticalLayout class="sapUiMediumMarginEnd">
-                            <ObjectAttribute title="Location" text="Warehouse A"/>
-                            <ObjectAttribute title="Halway" text="23L"/>
-                            <ObjectAttribute title="Rack" text="34"/>
-                        </layout:VerticalLayout>
-                        <layout:VerticalLayout>
-                            <ObjectAttribute title="Availability"/>
-                            <ObjectStatus text="In Stock" state="Success" />
-                        </layout:VerticalLayout>
-                    </layout:HorizontalLayout>
+                   	<f:content>
+						<fb:FilterBar id="filterbar" reset="onReset" search="onSearch" useToolbar="false" showGoOnFB="false">
+							<fb:filterItems>
+								<fb:FilterItem name="Autorizaciones de Tiempos" label="Autorizaciones de Tiempos">
+									<fb:control>
+										<Select
+										id="slAutorizacionesTiempos"
+										forceSelection="true"
+										change="onSelectChange"
+										items="{
+                                                    path: '/ProductNames'
+                                                }">
+										<core:Item key="{key}" text="{name}"/>
+										</Select>
+									</fb:control>				
+								</fb:FilterItem>								
+								<fb:FilterItem name="Tipo" label="Tipo">
+									<fb:control>
+										<Select
+										id="slTipo"
+										change="onSelectChange"
+										forceSelection="true"
+										items="{
+                                                    path: '/ProductCategories'
+                                                 }">
+										<core:Item key="{key}" text="{name}"/>
+										</Select>
+									</fb:control>				
+								</fb:FilterItem>				
+								<fb:FilterItem name="FechaHora" label="FechaHora">
+									<fb:control>
+										<Select
+										id="slSupplierName"
+										change="onSelectChange"
+										forceSelection="true"
+										items="{
+                                                    path: '/ProductSuppliers'
+                                                }">
+										<core:Item key="{key}" text="{name}"/>
+										</Select>
+									</fb:control>				
+								</fb:FilterItem>
+                                <fb:FilterItem name="Aprobado por" label="AprobadoPor">
+									<fb:control>
+										<Select
+										id="slSupplierNameD"
+										change="onSelectChange"
+										forceSelection="true"
+										items="{
+                                                    path: '/ProductSuppliers'
+                                                }">
+										<core:Item key="{key}" text="{name}"/>
+										</Select>
+									</fb:control>				
+								</fb:FilterItem>
+                                <fb:FilterItem name="Estado" label="Estado">
+									<fb:control>
+										<Select
+										id="slSupplierNameE"
+										change="onSelectChange"
+										forceSelection="true"
+										items="{
+                                                    path: '/ProductSuppliers'
+                                                }">
+										<core:Item key="{key}" text="{name}"/>
+										</Select>
+									</fb:control>				
+								</fb:FilterItem>
+							</fb:filterItems>
+						</fb:FilterBar>
+					</f:content>
                 </f:DynamicPageHeader>
             </f:header>
             <f:content>
@@ -54,7 +117,10 @@
                             <Text text="Estado" />
                         </Column>
                         <Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
-                            <Text text="Aprobado porstado" />
+                            <Text text="Aprobado por" />
+                        </Column>
+                        <Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+                            <Text text="Estado" />
                         </Column>
                     </columns>
                     <items>
@@ -65,6 +131,7 @@
                                 <Text text="21/01/2022" />
                                 <ObjectStatus text="Aprobado" state="Success" />
                                 <Text text="Benito Camelas" />
+                                <ObjectStatus text="Pendiente" state="Warning" />
                             </cells>
                         </ColumnListItem>
                     </items>

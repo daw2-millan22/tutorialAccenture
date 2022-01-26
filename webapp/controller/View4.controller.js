@@ -11,17 +11,25 @@ sap.ui.define([
     function (Controller, JSONModel, Formatter, Common) {
         "use strict";
 
-        return Controller.extend("tutorial1.controller.View3", {
+        return Controller.extend("tutorial1.controller.View", {
 
             Formatter: Formatter,
 
             onInit: function () {
                 //this.getOwnerComponent().setModel(new JSONModel("../model/cities.json"), "CitiesModel");
-                const oCitiesModel = new JSONModel();
-                oCitiesModel.loadData("../model/cities.json");
-                this.getView().setModel(oCitiesModel, "CitiesModel");
+                //console.log(sap.ui.getCore().getModel("DetailModel").getData());
+                //const oDetailModel = sap.ui.getCore().getModel("DetailModel");
+                //this.getView().setModel(oDetailModel, "DetailModel");
+
+                this.getOwnerComponent().getRouter().getRoute("RouteView4").attachPatternMatched ( function () {
+                    console.log(sap.ui.getCore().getModel("DetailModel").getData());
+                    const oDetailModel = sap.ui.getCore().getModel("DetailModel");
+                    this.getView().setModel(oDetailModel, "DetailModel");
+                },this);
+
+
             },
-           /*onSayHello: function (oEvent) { 
+            onSayHello: function (oEvent) { 
                 var oToolsModel = this.getOwnerComponent().getModel("ToolModel");
                 var row= oEvent.getSource().getCells();
                 row[0].getText();
@@ -30,23 +38,6 @@ sap.ui.define([
                 Common.openDialogFromFragment(this, "idSayHelloDialog", "tutorial1.fragment.sayHelloDialog");
                 
                 return;          
-            },*/
-
-            onPress: function (oEvent) {
-
-                var oToolsModel = this.getOwnerComponent().getModel("ToolModel");
-
-                var oModelNorthWind = this.getOwnerComponent().getModel();
-
-                oModelNorthWind.read(oEvent.getSource().getBindingContext().sPath, {
-                    success: function (oData) {
-                        sap.ui.getCore().setModel(new JSONModel(oData), "DetailModel");
-                        Common.navigateTo(this, "RouteView4");
-                    }.bind(this)
-                })
-                
-
-                
             }
             
             
