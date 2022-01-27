@@ -9,6 +9,13 @@
   
     <Page id="page" title="{i18n>title}">
         <content>
+            <HBox id="_IDGenHBox1" class="myHeaderBarGeneric">
+                 <Text  text="CategoryID"></Text>
+                <ComboBox class="myComboBoxStyle" id="products-combobox" items="{/Products}"  selectedKey="{ToolModel>/cityName}" >
+                    <core:Item id="_IDGenItem1" text="{CategoryID}" key="{CategoryID}"/>
+                </ComboBox>
+                 <Button id="_IDGenButton2" text="{i18n>NavigateToView} 2" ></Button>
+            </HBox>
             <Table id="_IDGenTable1" items="{/Products}" >
                 <columns>
                     <Column id="_IDGenColumn1" >

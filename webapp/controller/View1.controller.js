@@ -2,17 +2,19 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
     "../utils/Validator",
-    "../utils/Common"
+    "../utils/Common",
+    "tutorial1/utils/Constants"
+
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, JSONModel, Validator, Common) {
+    function (Controller, JSONModel, Validator, Common, Constants) {
         "use strict";
 
         return Controller.extend("tutorial1.controller.View1", {
             onInit: function () {
-                const oCitiesModel = new JSONModel();
+                const oCitiesModel = new JSONModel( Constants.model.TOOLS_MODEL);
                 oCitiesModel.loadData("../model/cities.json");
                 this.getView().setModel(oCitiesModel, "CitiesModel");
             },

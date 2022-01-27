@@ -2,13 +2,14 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
     "../utils/Formatter",
-    "../utils/Common"
+    "../utils/Common",
+    "tutorial1/utils/Constants"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
 
-    function (Controller, JSONModel, Formatter, Common) {
+    function (Controller, JSONModel, Formatter, Common, Constants) {
         "use strict";
 
         return Controller.extend("tutorial1.controller.View", {
@@ -30,7 +31,7 @@ sap.ui.define([
 
             },
             onSayHello: function (oEvent) { 
-                var oToolsModel = this.getOwnerComponent().getModel("ToolModel");
+                var oToolsModel = this.getOwnerComponent().getModel(Constants.model.TOOLS_MODEL);
                 var row= oEvent.getSource().getCells();
                 row[0].getText();
                 oToolsModel.setProperty("/cityName", row[0].getText());
